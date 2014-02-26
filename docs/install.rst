@@ -97,6 +97,9 @@ You will also need to install python db drivers for MySql.
 
 - MySQL-python
 
+::
+
+    $ bin/pip install MySQL-python
 
 Then you'll need to update the database connection string in your `bookie.ini`
 file. The database and user account need to exist in order for it to bootstrap
