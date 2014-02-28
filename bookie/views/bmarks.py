@@ -170,12 +170,12 @@ def edit_error(request):
                 except:
                     bmark = None
                 if bmark:
-               		return {
-                		'new': False,
+               	    return {
+                        'new': False,
                         'bmark': bmark,
                         'message': "URL already Exists",
                         'user': request.user,
-                	}
+                    }
                 bmark = BmarkMgr.store(
                     post['url'],
                     request.user.username,

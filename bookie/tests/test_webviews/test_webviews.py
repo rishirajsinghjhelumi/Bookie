@@ -112,14 +112,14 @@ class TestNewBookmark(TestViewBase):
         """ Verify whether the User has recieved the message that a previous URL already exists """
         self._login_admin()
 
-        _test_url = u"http://bmark.us/test"
-        _existing_url_message = "URL already Exists"
+        test_url = u"http://bmark.us/test"
+        existing_url_message = "URL already Exists"
 
-        #Add The Bookmark Once
+        # Add The Bookmark Once
         res = self.app.post(
             '/admin/new_error',
             params={
-                'url': _test_url,
+                'url': test_url,
                 'description': '',
                 'extended': '',
                 'tags': ''
@@ -129,16 +129,16 @@ class TestNewBookmark(TestViewBase):
             "302 Found",
             msg='recent status is 302 Found, ' + res.status)
 
-        #Add the Bookmark Again
+        # Add the Bookmark Again
         res = self.app.post(
             '/admin/new_error',
             params={
-                'url': _test_url,
+                'url': test_url,
                 'description': '',
                 'extended': '',
                 'tags': ''
             })
-        self.assertIn(_existing_url_message, res.body)
+        self.assertIn(existing_url_message, res.body)
 
 
 class TestRSSFeeds(TestViewBase):
