@@ -170,7 +170,7 @@ def edit_error(request):
                 except:
                     bmark = None
                 if bmark:
-               	    return {
+                    return {
                         'new': False,
                         'bmark': bmark,
                         'message': "URL already Exists",
